@@ -1,3 +1,5 @@
+# This is a simple test script to verify that the requirements needed work.
+
 import pettingzoo.classic.tictactoe_v3 as ttt
 import time
 import numpy as np
