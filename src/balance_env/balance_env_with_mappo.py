@@ -12,7 +12,7 @@ print("Starting MAPPO training on VMAS Balance...")
 experiment_config = get_default_experiment_config()
 
 experiment = Experiment(
-    task=get_balance_task(n_agents=3),
+    task=get_balance_task(n_agents=3), # 3, 5 and 7 agents were tested
     algorithm_config=MappoConfig.get_from_yaml(),
     model_config=MlpConfig.get_from_yaml(),
     critic_model_config=MlpConfig.get_from_yaml(),

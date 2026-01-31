@@ -14,7 +14,7 @@ def get_default_experiment_config():
     experiment_config.evaluation_interval = 6000
     experiment_config.checkpoint_interval = 12000
     experiment_config.create_json = True
-    experiment_config.render = False
+    experiment_config.render = False # Change to True to enable video rendering
     return experiment_config
 
 
