@@ -1,5 +1,4 @@
 from benchmarl.algorithms import IppoConfig
-from benchmarl.environments import VmasTask
 from benchmarl.experiment import Experiment
 from benchmarl.models.mlp import MlpConfig
 import sys
@@ -25,5 +24,5 @@ experiment.run()
 print("\nGenerating learning curves...")
 
 data = load_metrics_data(experiment.folder_name)
-plot_learning_curves(data, experiment.folder_name, algorithm_name="IPPO")
+plot_learning_curves(data, experiment.folder_name, algorithm_name="IPPO", task_name="Balance")
 print_training_summary(data)

@@ -5,7 +5,7 @@ from benchmarl.experiment import ExperimentConfig
 from benchmarl.environments import VmasTask
 
 def get_default_experiment_config():
-    """Returns a default ExperimentConfig for VMAS Balance training."""
+    """Returns a default ExperimentConfig for VMAS training."""
     experiment_config = ExperimentConfig.get_from_yaml()
     experiment_config.max_n_iters = 100
     experiment_config.loggers = ["csv"]
@@ -24,6 +24,14 @@ def get_balance_task(n_agents=3):
     task.config["n_agents"] = n_agents
     return task
 
+
+def get_sampling_task(n_agents=3):
+    """Returns a VMAS Sampling task with specified number of agents."""
+    task = VmasTask.SAMPLING.get_from_yaml()
+    task.config["n_agents"] = n_agents
+    return task
+
+
 METRICS_TO_PLOT = {
     'Episode Reward (Training)': 'collection_reward_episode_reward_mean.csv',
     'Episode Reward (Evaluation)': 'eval_reward_episode_reward_mean.csv',
@@ -32,6 +40,7 @@ METRICS_TO_PLOT = {
     'Entropy': 'train_agents_entropy.csv',
     'Episode Length (Eval)': 'eval_reward_episode_len_mean.csv',
 }
+
 
 MADDPG_METRICS = {
     'Episode Reward (Training)': 'collection_reward_episode_reward_mean.csv',
@@ -71,14 +80,15 @@ def load_metrics_data(experiment_folder, algorithm_name=""):
     return data
 
 
-def plot_learning_curves(data, experiment_folder, algorithm_name=""):
+def plot_learning_curves(data, experiment_folder, algorithm_name="", task_name=""):
     """Generate and save learning curves plots."""
     if not data:
         print("No data found to plot!")
         return
 
     fig, axes = plt.subplots(2, 3, figsize=(18, 10))
-    title = f'{algorithm_name} on VMAS Balance Environment - Training Results' if algorithm_name else 'VMAS Balance Environment - Training Results'
+    title = f'{algorithm_name} on VMAS {task_name} Environment - Training Results' if algorithm_name \
+            else f'VMAS {task_name} Environment - Training Results'
     fig.suptitle(title, fontsize=16, fontweight='bold')
     axes = axes.flatten()
 
