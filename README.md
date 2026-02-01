@@ -137,5 +137,5 @@ If you encounter dependency conflicts:
 
 ## License
 
-Please refer to the individual licenses of BenchMARL, TorchRL, VMAS, and PettingZoo for usage terms.
+Please refer to the individual licenses of BenchMARL, TorchRL, VMAS for usage terms.
 
