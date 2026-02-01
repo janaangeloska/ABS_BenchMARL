@@ -2,6 +2,23 @@
 
 Authors: Jana Angeloska 226040 & Dragana Usovikj 221043
 
+# Environments
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="src/results/eval_balance.gif"/>
+      <br/>
+      <b>Balance</b>
+    </td>
+    <td align="center">
+      <img src="src/results/eval_sampling.gif"/>
+      <br/>
+      <b>Sampling</b>
+    </td>
+  </tr>
+</table>
+
 # BenchMARL Setup
 
 The setup is based on the [official BenchMARL repository](https://github.com/facebookresearch/BenchMARL).
